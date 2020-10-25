@@ -2,34 +2,21 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import Navbar from '../../components/Navbar';
+import logoSimbolo from '../../assets/logoSimbolo.svg';
+import LogoBanner from '../../assets/LogoBanner.svg';
+
+import RedeSocial from '../../components/RedeSocial';
+import ImgCell from '../../assets/preview_cell.png';
 
 import './Home.scss'
-
-import LogoVerfical from '../../assets/LogoVertical.svg';
-
-import LogoBanner from '../../assets/LogoBanner.svg';
-import ImgCell from '../../assets/preview_cell.png';
-import logoSimbolo from '../../assets/logoSimbolo.svg';
-
-
-import Linkedin from '../../assets/Linkedin.svg';
-import Email from '../../assets/Email.svg';
-import Instagram from '../../assets/Instagram.svg';
-
-const LinkedinUrl = 'https://www.linkedin.com/in/geanlopes/';
-const InstagramUrl = 'https://www.instagram.com/f.geanlopes/';
-const EmailUrl = 'mailto:f.geanlopes';
 
 function Home (){
     return (
         <div className="home">
             <section className="box_1">
                 <Navbar/>
-                <img className="LogoVerfical" src={LogoVerfical} alt=""/>
                 <div className="RedeSocialVertical">
-                    <img src={Linkedin} />
-                    <img src={Email} />
-                    <img src={Instagram} />
+                    <RedeSocial/>
                 </div>
                 <img className="LogoBanner" src={LogoBanner} alt="Logo Chama no Zap!"/>
             </section>
@@ -64,15 +51,7 @@ function Home (){
             <section className="box_4">
                 <h3 className="global_title">Contato</h3>
                 <div className="icones_contato">
-                    <Link className="icone" to={LinkedinUrl}>
-                        <img src={Linkedin} />
-                    </Link>
-                    <Link className="icone" to={InstagramUrl}>
-                        <img src={Email} />
-                    </Link>
-                    <Link className="icone" to={EmailUrl}>
-                        <img src={Instagram} />
-                    </Link>
+                    <RedeSocial />
                 </div>
             </section>
         </div>

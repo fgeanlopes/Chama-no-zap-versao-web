@@ -1,0 +1,39 @@
+.navbar {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 253, 95, 0) 0%, rgb(0, 0, 0) 35%);
+  @media (min-width: 1000px) {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .LogoVerfical {
+    display: none;
+    @media (min-width: 1000px) {
+      display: block;
+    }
+  }
+
+  .itens {
+    display: flex;
+    justify-content: center;
+    @media (min-width: 1000px) {
+      justify-content: flex-end;
+    }
+    .link {
+      margin-right: 30px;
+      text-decoration: none;
+      color: #8d8e90;
+      font-size: 18px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

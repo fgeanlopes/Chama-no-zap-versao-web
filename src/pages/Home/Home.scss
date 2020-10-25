@@ -28,6 +28,13 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    @media (min-width: 1000px) {
+      height: 100vh;
+      max-height: 1000px;
+      padding-bottom: 0;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
   }
 
   .box_1 {
@@ -35,13 +42,39 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
 
     min-height: 600px;
-    height: 75vh;
+    height: 100vh;
 
     margin: -30px;
     @media (min-width: 600px) {
       margin: -60px;
+    }
+
+    @media (min-width: 1000px) {
+      max-width: initial;
+    }
+
+    .RedeSocialVertical {
+      position: absolute;
+      bottom: 60px;
+      left: 20px;
+      @media (min-width: 650px) {
+        bottom: 120px;
+      }
+      @media (min-width: 1000px) {
+        left: 60px;
+      }
+      display: flex;
+      flex-direction: column;
+      .icone {
+        margin-bottom: 30px;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
     }
   }
   .box_2 {
@@ -50,6 +83,9 @@
       align-items: center;
       .content_description {
         padding-left: 30px;
+        @media (min-width: 1000px) {
+          padding-left: 0;
+        }
       }
       .global_title {
         text-align: left;
@@ -99,7 +135,14 @@
     }
   }
   .box_4 {
-    margin: -60px;
+    margin: -30px;
+    @media (min-width: 1000px) {
+      left: 60px;
+      max-width: initial;
+    }
+    @media (min-width: 600px) {
+      margin: -60px;
+    }
     margin-top: 0;
     padding-bottom: 150px;
     background: linear-gradient(
