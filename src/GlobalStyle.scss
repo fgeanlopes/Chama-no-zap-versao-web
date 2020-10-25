@@ -22,20 +22,13 @@ body {
   color: #fff;
   font-weight: 700;
   font-size: calc(50px + (20 / 1400) * 100 * 0.5vw);
-  @media (min-width: 1300px) {
-    font-size: calc(45px + (20 / 1400) * 100 * 0.5vw);
-  }
 }
 
 .global_description {
   color: #8d8e90;
   font-weight: 400;
-  font-size: calc(16px + (20 / 1400) * 100 * 0.5vw);
-  line-height: calc(32px + (20 / 1400) * 100 * 0.5vw);
-  @media (min-width: 1300px) {
-    font-size: calc(18px + (20 / 1400) * 100 * 0.5vw);
-    line-height: calc(36px + (20 / 1400) * 100 * 0.5vw);
-  }
+  font-size: calc(12px + (20 / 1400) * 100 * 0.5vw);
+  line-height: calc(20px + (20 / 1400) * 100 * 0.5vw);
 }
 
 .md-40 {

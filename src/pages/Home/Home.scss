@@ -2,6 +2,23 @@
   .global_title {
     text-align: center;
     padding-bottom: 40px;
+    @media (min-width: 1000px) {
+      padding-bottom: 20px;
+      padding-left: 120px;
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 90px;
+        background-color: #00fd5f;
+        height: 2px;
+      }
+    }
   }
   .content_description {
     padding: 50px 0;
@@ -12,46 +29,118 @@
     justify-content: center;
     flex-direction: column;
   }
+
   .box_1 {
     background-image: url(../../assets/BackgroundHome.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
-    height: 400px;
+    min-height: 600px;
+    height: 75vh;
+
     margin: -30px;
     @media (min-width: 600px) {
       margin: -60px;
     }
   }
-
   .box_2 {
-    @media (min-width: 768px) {
+    @media (min-width: 650px) {
       flex-direction: row;
+      align-items: center;
+      .content_description {
+        padding-left: 30px;
+      }
+      .global_title {
+        text-align: left;
+        @media (min-width: 1000px) {
+          text-align: center;
+        }
+      }
     }
     .ImgCell {
-      width: 66%;
-      margin: 0 auto;
-      max-width: 360px;
+      display: flex;
+      justify-content: center;
+      img {
+        margin: 0 auto;
+        width: initial;
+        max-height: 500px;
+      }
       @media (min-width: 768px) {
         min-width: 50%;
-        flex-direction: row;
       }
     }
     .global_description {
       padding-left: 30px;
-      @media (min-width: 768px) {
+      @media (min-width: 600px) {
+        padding-left: initial;
         min-width: 50%;
       }
     }
   }
-
   .box_3 {
+    margin-bottom: 100px;
+    @media (min-width: 1000px) {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
     .logoSimbolo {
-      margin: 0 auto;
-      max-width: 25%;
-      @media (min-width: 768px) {
-        max-width: 15%;
+      display: flex;
+      justify-content: center;
+      @media (min-width: 1000px) {
+        min-width: 35%;
+      }
+      img {
+        max-height: 250px;
+        @media (min-width: 1000px) {
+          max-height: 400px;
+        }
+      }
+    }
+  }
+  .box_4 {
+    margin: -60px;
+    margin-top: 0;
+    padding-bottom: 150px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 253, 95, 0) 0%,
+      rgba(0, 253, 95, 0.25) 100%
+    );
+
+    .global_title {
+      justify-content: center;
+      align-items: flex-end;
+      padding-left: 0;
+
+      @media (min-width: 1000px) {
+        &:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          width: 90px;
+          background-color: #00fd5f;
+          height: 2px;
+        }
+      }
+    }
+
+    .icones_contato {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      padding-top: 30px;
+      .icone {
+        margin-right: 45px;
+        &:last-child {
+          margin-right: 0;
+        }
+        img {
+          min-width: 45px;
+        }
       }
     }
   }
