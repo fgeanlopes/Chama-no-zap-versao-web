@@ -1,0 +1,135 @@
+.web {
+  margin: -30px;
+  @media (min-width: 600px) {
+    margin: -60px;
+  }
+  .box_1 {
+    .LogoVerfical {
+      position: absolute;
+      top: 15px;
+      left: 10%;
+      @media (min-width: 1000px) {
+        left: 60px;
+      }
+    }
+    .link-home {
+      z-index: 2;
+      position: absolute;
+      top: 15px;
+      right: 10%;
+      @media (min-width: 1000px) {
+        right: 60px;
+      }
+      font-size: 16px;
+
+      width: 160px;
+      text-align: center;
+      background: #08431e;
+
+      color: white;
+      border-radius: 8px;
+      padding: 5px 0px;
+      text-decoration: none;
+      &:hover {
+        background: #217635;
+      }
+    }
+  }
+
+  .box_1 {
+    background-image: url(../../assets/BackgroundHome.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s;
+    @media (min-width: 1440px) {
+      background-position: unset;
+    }
+    background-size: cover;
+    height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .LogoBanner {
+      width: 40%;
+      margin: 0 auto;
+      position: relative;
+      bottom: 60px;
+      @media (min-width: 600px) {
+        max-width: 250px;
+      }
+    }
+
+    .mensagem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 80%;
+      margin: 0 auto;
+
+      @media (min-width: 600px) {
+        max-width: 400px;
+      }
+
+      .btn_send {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+      }
+      input {
+        width: 100%;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 12px;
+        font-size: 16px;
+        color: #f7f5f5;
+        background: #00000059;
+        text-align: center;
+      }
+      ::placeholder {
+        color: #f7f5f5;
+        opacity: 0.7;
+      }
+
+      .btn_chamarzap {
+        color: #dfdfdf;
+
+        margin: 0 auto;
+        top: 25px;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 50px;
+        border-radius: 12px;
+        background: #217635;
+        transition: all 0.3s;
+        &:hover {
+          transition: all 0.3s;
+          background: #29ad48;
+        }
+      }
+    }
+  }
+
+  .box_2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    .icone {
+      margin-right: 45px;
+      &:last-child {
+        margin-right: 0;
+      }
+      img {
+        min-width: 45px;
+      }
+    }
+  }
+}

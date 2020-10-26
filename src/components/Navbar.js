@@ -10,7 +10,7 @@ function Navbar (){
             <img className="LogoVerfical" src={LogoVerfical} alt="" />
             <div className="itens">
                 <Link to="" className="global_description link">O que é</Link>
-                <Link to="" className="global_description link">Porque?</Link>
+                <Link to="" className="global_description link">Por que?</Link>
                 <Link to="" className="global_description link">Contato</Link>
             </div>
         </div>

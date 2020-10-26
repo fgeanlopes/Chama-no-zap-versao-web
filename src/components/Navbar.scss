@@ -31,8 +31,19 @@
       text-decoration: none;
       color: #8d8e90;
       font-size: 18px;
+      position: relative;
       &:last-child {
         margin-right: 0;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 70%;
+          height: 2px;
+          background-color: #25d366;
+        }
       }
     }
   }
