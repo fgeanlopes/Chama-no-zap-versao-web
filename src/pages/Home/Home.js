@@ -18,14 +18,16 @@ function Home (){
         <div className="home">
             <section className="box_1">
                 <Navbar/>
-                <div className="novidade">
-                    <Link to='/web' className="versao_web global_description">
-                        Versão web
-                    </Link>
-                    <div className="alerta_novidade">
-                        <p className="global_description">Novidade!</p>
+                <Link to='/web'>
+                    <div className="novidade">
+                        <div className="versao_web global_description">
+                            Versão web
+                        </div>
+                        <div className="alerta_novidade">
+                            <p className="global_description">Novidade!</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
                 <div className="RedeSocialVertical">
                     <RedeSocial/>
                 </div>
