@@ -31,6 +31,9 @@
     z-index: 3;
     right: 15px;
     transform: translateY(-50%);
+    @media (max-width: 768px) {
+      top: 15%;
+    }
     top: 50%;
     animation: move 1.4s infinite;
     .versao_web {
@@ -92,17 +95,19 @@
       position: absolute;
       bottom: 60px;
       left: 20px;
+      .rede_social_svg {
+        display: flex;
+        flex-direction: column;
+      }
       @media (min-width: 650px) {
         bottom: 120px;
       }
       @media (min-width: 1000px) {
         left: 60px;
       }
-      display: flex;
-      flex-direction: column;
       .icone {
         margin-bottom: 30px;
-        img {
+        svg {
           width: 30px;
           height: 30px;
         }
@@ -224,23 +229,6 @@
           width: 90px;
           background-color: #00fd5f;
           height: 2px;
-        }
-      }
-    }
-
-    .icones_contato {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-
-      padding-top: 30px;
-      .icone {
-        margin-right: 45px;
-        &:last-child {
-          margin-right: 0;
-        }
-        img {
-          min-width: 45px;
         }
       }
     }

@@ -1,27 +1,27 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import Linkedin from '../assets/Linkedin.svg';
-import Email from '../assets/Email.svg';
-import Instagram from '../assets/Instagram.svg';
+import Linkedin from './Linkedin';
+import Email from './Email';
+import Instagram from './Instagram';
 
 const LinkedinUrl = 'https://www.linkedin.com/in/geanlopes/';
-const InstagramUrl = 'https://www.instagram.com/f.geanlopes/';
+const InstagramUrl = 'https://www.instagram.com/fgeanlopes/';
 const EmailUrl = 'mailto:f.geanlopes@gmail.com';
 
 function RedeSocial (){
     return(
-        <>
+        <div className="rede_social_svg">
             <Link className="icone" to={{pathname:LinkedinUrl}} target="_blank">
-                <img src={Linkedin} />
+                <Linkedin/>
             </Link>
             <Link className="icone" to={{ pathname:EmailUrl}} target="_blank">
-                <img src={Email} />
+                <Email/>
             </Link>
             <Link className="icone" to={{ pathname:InstagramUrl}} target="_blank">
-                <img src={Instagram} />
+                <Instagram/>
             </Link>
-        </>
+        </div>
     )
 }
 

@@ -2,10 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import Navbar from '../../components/Navbar';
+import BotaoSubir from '../../components/BotaoSubir';
 import logoSimbolo from '../../assets/logoSimbolo.svg';
 import LogoBanner from '../../assets/LogoBanner.svg';
 
-import RedeSocial from '../../components/RedeSocial';
+import RedeSocial from '../../components/IconeRedeSocial/RedeSocial';
 import ImgCell from '../../assets/preview_cell.png';
 import IconPlayStore from '../../assets/icon_PlayStore.svg';
 
@@ -16,7 +17,8 @@ const LinkPlayStore = "https://play.google.com/store/apps/details?id=com.unidese
 function Home (){
     return (
         <div className="home">
-            <section className="box_1">
+            <BotaoSubir/>
+            <section id="seccao1" className="box_1">
                 <Navbar/>
                 <Link to='/web'>
                     <div className="novidade">
@@ -33,7 +35,7 @@ function Home (){
                 </div>
                 <img className="LogoBanner" src={LogoBanner} alt="Logo Chama no Zap!"/>
             </section>
-            <section className="box_2">
+            <section id="seccao2" className="box_2">
                 <div className="ImgCell">
                     <img src={ImgCell} alt="Preview App, chama no zap!"/>
                 </div>
@@ -50,7 +52,7 @@ function Home (){
                     </Link>
                 </div>
             </section>
-            <section className="box_3">
+            <section id="seccao3" className="box_3">
                 <div className="logoSimbolo">
                     <img src={logoSimbolo} />
                 </div>
@@ -65,7 +67,7 @@ function Home (){
                     </p>
                 </div>
             </section>
-            <section className="box_4">
+            <section id="seccao4" className="box_4">
                 <h3 className="global_title">Contato</h3>
                 <div className="icones_contato">
                     <RedeSocial />

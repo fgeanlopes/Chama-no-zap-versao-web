@@ -121,14 +121,16 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 30px;
+    position: relative;
+    top: -15px;
     .icone {
       margin-right: 45px;
       &:last-child {
         margin-right: 0;
       }
-      img {
+      svg {
         min-width: 45px;
+        min-height: 45px;
       }
     }
   }
