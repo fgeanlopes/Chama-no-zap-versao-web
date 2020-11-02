@@ -29,7 +29,7 @@ function PageChamaNoZapDirect (){
             // Adicionar a partir da posicao quatro um espaço entre os números
             telefoneInput = telefoneInput.replace(/(.{4})(\d)/, "$1 $2 ")
         } 
-        if(telefoneInput.length >= 10) {
+        if(telefoneInput.length >= 12) {
             // Adicionar a partir da posicao dez um espaço entre os números
             telefoneInput = telefoneInput.replace(/(.{10})(\d)/, "$1$2 ")
         }
