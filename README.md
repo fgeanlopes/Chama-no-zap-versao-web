@@ -20,7 +20,7 @@
 <p>
     Acesse o link:
     <a href="https://chamanozap.app/web" target="_Blank">Chama no zap Web</a><br/>
-    Informe o número de deseja encontrar o contato DD+número.<br/>
+    Informe o número de deseja encontrar o contato DD+Número.<br/>
     Ex: 19 1234 5678 <br/>
     Clique em chamar. 
 </p>
