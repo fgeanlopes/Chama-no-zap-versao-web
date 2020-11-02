@@ -22,10 +22,11 @@
     <a href="https://chamanozap.app/web" target="_Blank">Chama no zap Web</a>
 </p>
 <p>
-Informe o número de deseja buscar dd + número.<br/>
-Ex: 19 1234 5678 <br/>
-Clique em chamar. 
+    Informe o número de deseja buscar dd + número.<br/>
 </p>
-
-$ 
-```
+<p>
+    Ex: 19 1234 5678 <br/>
+</p>
+<p>
+    Clique em chamar. 
+</p>
