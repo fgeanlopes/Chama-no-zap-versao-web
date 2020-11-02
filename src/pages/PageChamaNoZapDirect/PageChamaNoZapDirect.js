@@ -57,6 +57,12 @@ function PageChamaNoZapDirect (){
         }
     }
 
+    function clearInput(){
+        setTimeout(() => {
+            setNumeroTelefone('');
+            console.log('limpou');
+        }, 3000);
+    }
     return (
         <div className="web">
             <div className="d-none">
@@ -74,17 +80,13 @@ function PageChamaNoZapDirect (){
                         placeholder="Digite número aqui" 
                         onChange={handleInputChange} 
                     />
-                    
                     {habilitaBtn === 1 ? 
-                        <a onClick={() => { setNumeroTelefone('') }} className="btn_send btn_chamarzap global_description" 
-                            href={`https://api.whatsapp.com/send?phone=55${numeroTelefone}`} 
-                            target="_blank">{mensagemBtn}
-                        </a> : 
-                        <div className="btn_send btn_chamarzap global_description" >
+                        <a onClick={clearInput} target="_blank" className="btn_send btn_chamarzap global_description" 
+                            href={`https://api.whatsapp.com/send?phone=55${numeroTelefone}`} >{mensagemBtn}</a> : 
+                        <div className="btn_send btn_chamarzap global_description">
                             <p>{mensagemBtn}</p>
                         </div>
                     }
-
                 </div>
             </div>
             <div className="box_2">
