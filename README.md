@@ -19,14 +19,8 @@
 <h2> 📨 Como usar? </h2>
 <p>
     Acesse o link:
-    <a href="https://chamanozap.app/web" target="_Blank">Chama no zap Web</a>
-</p>
-<p>
-    Informe o número de deseja buscar dd + número.<br/>
-</p>
-<p>
+    <a href="https://chamanozap.app/web" target="_Blank">Chama no zap Web</a><br/>
+    Informe o número de deseja encontrar o contato DD+número.<br/>
     Ex: 19 1234 5678 <br/>
-</p>
-<p>
     Clique em chamar. 
 </p>
