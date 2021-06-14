@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,300,400&display=swap');
+body,html{font-family: 'Montserrat', sans-serif; font-weight: 300; background-color: black;overflow-x:hidden}
+body,h1,h2,h3,li,p,ul{margin:0;padding:0}
+li,ol,ul{list-style:none}
+a,a:hover{text-decoration:none}
+a,p,span,input{margin:0;padding:0;font-size:18px}
+:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+button:focus,input:focus,p:focus,span:focus{border-color:transparent;box-shadow:none;outline:0}
+:root{--verde: #29ad48; --verdeHover:#217635;}
+section{width: 100%;}
+
+h2{text-align: center; position: relative; font-size: 50px;color:white; margin-bottom: 100px;}
+h2:after{content: '';position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); background-color:#76FE36; width: 150px; height: 4px;}
+.button{text-align: center;border-radius: 5px;padding: 10px 30px;background-color: var(--verde);color:white}
+.button:hover{transition: all 0.3s;background: var(--verdeHover);}
+
+.home{background-repeat: no-repeat; background-size: cover; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; flex-direction: column;}
+.home .content{width: 80%; margin: 0 auto; display: flex; flex-direction: column; align-items: center;}
+.home .link_saiba_mais{position: absolute; top: 30px; right: 15px;}
+.home input{width:100%;min-width:235px;max-width:430px;margin:45px 0 25px 0;border:none;padding:15px;border-radius:10px;color:#f5f5f5;background:rgba(0,0,0,.35);text-align:center}
+.home input::placeholder{color:white;}
+.home .btn_chamar{width: 90%; max-width: 400px;padding: 15px 30px;}
+
+.downloadApp:hover .message_click{background-color: var(--verdeHover);}
+
+.project{padding: 0 0 200px 0;}
+.project p{line-height: 150%; margin: 0 auto; color:#8D8E90; max-width: 500px;text-align: center;}
+
+.contact{position: relative;z-index: 2;overflow: hidden;padding-bottom: 200px;}
+.contact .rede_social{max-width: 200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;}
+.contact .effect_footer{height: 250px;position: absolute;bottom: -160px;left: 0;width: 100%;z-index: -1;opacity: .6;}
+
+.version{color:#676767; position: absolute; bottom: 15px;right: 15px;}
+
+@media(max-width:849px){
+  .home .content .logo{padding: 0 10%;}
+  .downloadApp *{font-size: 15px;}
+  .downloadApp{background-color: var(--verde); padding: 10px 0; color:white; display: flex; justify-content: center; align-items: center;position:fixed;bottom: 0; left: 0; z-index:3;width:100%;}
+  .downloadApp .header{margin-right: 5px;}
+  .project p{padding: 0 15px;}
+}
+
+@media(min-width:850px){
+  .downloadApp{position:fixed;z-index:3;right:15px;transform:translateY(-50%);top:50%;-webkit-animation:move 1.4s infinite;animation:move 1.4s infinite}
+  .downloadApp .header{color:var(--verde);font-weight:700;font-size:18px;background:#efefef;padding:10px 30px;border-radius:8px 8px 0 0;text-decoration:none}
+  .downloadApp .message_click{display:flex;align-items:center;justify-content:center;background:var(--verde);color:#fff;border-radius:0 0 10px 10px;padding:15px 0;font-weight:700}
+  .project{padding-top: 100px}
+}
