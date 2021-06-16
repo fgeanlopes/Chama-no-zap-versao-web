@@ -1,33 +1,34 @@
-import react, {useState, useCallback} from 'react';
+import react, {useState, useCallback, useEffect} from 'react';
 import Image from 'next/image';
 
 export default function Home() {
   
-  const [numero, setNumero] = useState("");
+  const [numero, setNumero] = useState('');
   const [randomColor, setRandoColor] = useState(Math.floor(Math.random()*16777215).toString(16.6));
   const [habilitaBtn, setHabilitaBtn] = useState(false);
   const [mensagemBtn, setMensagemBtn] = useState('Digite o número acima');
 
   const clearInput = useCallback(()=>{
-    setTimeout(setNumero(''), 1000);
-  },[]);
-
-  const topPage = useCallback(()=>{
     // setTimeout(setNumero(''), 1000);
   },[]);
-  
-//USAR CALLBACK
-//   window.onscroll = () => {
-//     var btn_to_top = window.scrollY;
-//     var botao_subir = document.querySelector(".botao_subir");
 
-//     if (btn_to_top > 100) {
-//         botao_subir.classList.add("active");
-//     } 
-//     else {
-//         botao_subir.classList.remove("active");
-//     }
-// };
+  const handleScroll = useCallback((element)=>{
+    document.getElementById(element).scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  },[]);
+
+  const handleInputChange = useCallback((e)=>{
+    let dig = e.target.value;
+    
+    dig = dig.replace(/\D/g,"");                   //Remove tudo o que não é dígito
+    dig = dig.replace(/^(\d{2})(\d)/g,"($1) $2");  //Coloca parênteses em volta dos dois primeiros dígitos
+    dig = dig.replace(/(\d)(\d{4})$/,"$1-$2");     //Coloca hífen entre o quarto e o quinto dígitos
+
+    setNumero(dig)
+
+  },[numero]);
+
 
   return (
     <>
@@ -38,14 +39,14 @@ export default function Home() {
             </div>
 
             {/* COLOCAR TECLADO DE NUMERO DO CELULAR */}
-            <div className="link_saiba_mais button" onClick={handleScroll('project')}>Conheça o projeto</div>
+            <div className="link_saiba_mais button" onClick={()=>{handleScroll('project')}}>Conheça o projeto</div>
 
             <input 
-              type="text" 
-              value={numero} 
-              placeholder="Digite número aqui" 
-              // onChange={handleInputChange}
-              onChange=""
+              type="text"
+              value={numero}
+              maxLength="15"
+              placeholder="Digite número aqui"
+              onChange={(e)=>{handleInputChange(e)}}
             />
 
             {habilitaBtn ? 
