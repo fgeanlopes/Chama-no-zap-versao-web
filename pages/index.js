@@ -5,24 +5,26 @@ import axios from 'axios';
 export default function Home() {
   
   const [numero, setNumero] = useState('');
-  const [randomColor, setRandoColor] = useState(Math.floor(Math.random()*16777215).toString(16.6));
+  const [randomColor, setRandoColor] = useState("");
+  const [statusCheckNumber, setStatusCheckNumber] = useState("Validar");
   const [habilitaBtn, setHabilitaBtn] = useState(false);
   const [mensagemBtn, setMensagemBtn] = useState('Digite o número acima');
 
-  const callMessage = useCallback( async ()=>{
-    let number = numero.replace("-","").replace(" ", "").replace("(", "").replace(")", "");
-    let resultCheck = await axios.post("https://check-whatsapp-9mzzw1z2y-fgeanlopes.vercel.app", {number});
+  // GENERATION COLORS
+  useEffect(()=>{
+    setRandoColor(Math.floor(Math.random()*16777215).toString(16.6));
+      let aaa = {"validacao": "" , "erro": "\n\t  Error! Unknown error. Please try again.\n\t"};
+      // console.log(aaa.erro);
+  },[])
 
-    console.log('data', resultCheck);
-
-  },[numero])
-
+  // SCROLL ANIMATE
   const handleScroll = useCallback((element)=>{
     document.getElementById(element).scrollIntoView({ 
       behavior: 'smooth' 
     });
   },[]);
 
+  // ENTRADA DE DADO
   const handleInputChange = useCallback((e)=>{
     let dig = e.target.value;
     
@@ -34,7 +36,27 @@ export default function Home() {
     dig.length > 0 && setMensagemBtn('Digite número completo')
     setNumero(dig)
   },[numero]);
+  
+  // CHECK REGISTERED WHATSAPP
+  const checkNumber = useCallback( async ()=>{
+    let number = numero.replace("-","").replace(" ", "").replace("(", "").replace(")", "");    
+    if(number.length === 11){
+      setStatusCheckNumber('Validando...');
+      let resultNumber = await axios.post(`https://polar-plains-38379.herokuapp.com/check?number=${number}`);
+      let [data] = resultNumber.data;
 
+      if(data.validacao === "Exists on WhatsApp!"){
+        setStatusCheckNumber('Número cadastrado!');
+      }
+      else if(data.validacao === "No exists on WhatsApp"){
+        setStatusCheckNumber('Número não cadastrado!');
+      }
+      else if(data.erro === "\n\t  Error! Unknown error. Please try again.\n\t"){
+        setStatusCheckNumber('Falha ao validar!');
+      }
+    }
+  },[numero])
+  
   useEffect(()=>{
     let checkValidate = document.getElementById("check_number");
     let animate = document.querySelector(".button_wp");
@@ -79,7 +101,7 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" id="check_number" className="none" width="20" height="18" viewBox="0 0 166 150.9"><path d="M0.3 96l62.4 54.1L165.6 0.3"/></svg>
             </div>
 
-            <a className="button_wp button btn_chamar bold" onClick={()=>{callMessage()}}>TESTE</a>
+            <a className="button_wp button btn_chamar bold" onClick={()=>{checkNumber()}}>{statusCheckNumber}</a>
 
             {/* {habilitaBtn ? 
                 <a className="button_wp button btn_chamar bold" onClick={callMessage} 
@@ -130,42 +152,3 @@ export default function Home() {
     </>
   )
 }
-
-// export const getStaticProps = () => {
-
-//   const puppeteer = require('puppeteer');
-
-//   const checkNumber = async () =>{
-//     const browser = await puppeteer.launch({headless: true});
-//     const page = await browser.newPage();
-
-//     await page.goto('https://watools.io/check-numbers');
-//     await page.select('[ng-model="countryDialCode"]','string:+55');
-//     await page.type('[ng-model="phone"]', '19984569788');
-//     await page.click('[ng-click="checkNumber()"]');
-
-//     results = {};
-
-//     const getData = async() => {
-//       return await page.evaluate(async () => {
-//           return await new Promise(resolve => {
-//             setTimeout(() => {
-//                   resolve([
-//                     {validacao:document.querySelector('.number-exists').textContent},
-//                     {erro:document.querySelector('[ng-show="error"]').textContent}
-//                   ]);
-//             }, 3000)
-//         })
-//       })
-//     }  
-    
-//     results = await getData();
-//     console.log('0',results[0])
-//     console.log('1',results[1])
-
-//     await browser.close();
-//     // return results;
-//   }
-
-//   return { props: {"results":} }
-// }
