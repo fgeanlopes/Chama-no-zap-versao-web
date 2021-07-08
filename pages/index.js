@@ -2,13 +2,70 @@ import {useState, useCallback, useEffect} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
-export default function Home() {
-  
+//TODO GOOGLE ANALYTICS
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-172441185-1');
+
+//TODO FIREBASE
+import firebase from "firebase/app"
+import "firebase/firestore"
+
+
+
+export default function Home(props) {
+    
   const [values, setValues] = useState('');
   const [callWhatsapp, setCallWhatsapp] = useState('');
   const [randomColor, setRandoColor] = useState("");
   const [habilitaBtn, setHabilitaBtn] = useState(false);
   const [mensagemBtn, setMensagemBtn] = useState('Digite o número acima');
+
+  //TODO GOOGLE ANALYTICS
+  useEffect(()=>{
+      ReactGA.pageview(window.location.pathname + window.location.search);
+  },[])
+  
+ //TODO FIREBASE 2
+  useEffect( async ()=>{
+    let date = new Date();
+    let dia = date.getDate();
+    let acesso = {dia, hora:`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`}
+
+    let firebaseConfig = {
+      // apiKey:process.env.APIKEY,
+      // authDomain:process.env.AUTHDOMAIN,
+      // projectId:process.env.PROJECTID,
+      // storageBucket:process.env.STORAGEBUCKET,
+      // messagingSenderId:process.env.MESSAGINGSENDERID,
+      // appId:process.env.APPID,
+      // measurementId:process.env.MEASUREMENTID
+      
+      // apiKey:process.env.NEXT_PUBLIC_APIKEY,
+      // authDomain:process.env.NEXT_PUBLIC_AUTHDOMAIN,
+      // projectId:process.env.NEXT_PUBLIC_PROJECTID,
+      // storageBucket:process.env.NEXT_PUBLIC_STORAGEBUCKET,
+      // messagingSenderId:process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
+      // appId:process.env.NEXT_PUBLIC_APPID,
+      // measurementId:process.env.NEXT_PUBLIC_MEASUREMENTID
+
+      apiKey: "AIzaSyCNi1WmPNkv2-amZP7ZoPCRKaCEqUIY03k",
+      authDomain: "chama-no-zap-fb014.firebaseapp.com",
+      projectId: "chama-no-zap-fb014",
+      storageBucket: "chama-no-zap-fb014.appspot.com",
+      messagingSenderId: "799557647828",
+      appId: "1:799557647828:web:e696ffb0107371ec58ea41",
+      measurementId: "G-LCFRQ77RWS"
+    };
+    
+    let app = "";
+    if (!firebase.apps.length) {
+      app = firebase.initializeApp(firebaseConfig);
+    }
+
+    // //TODO SEND FIREBASE
+    const db = firebase.firestore(app);
+    const res = await db.collection('acess').add(acesso);
+  },[])
 
   // GENERATION COLORS
   useEffect(()=>{
@@ -16,11 +73,11 @@ export default function Home() {
     window.onscroll = () => {
       let to = window.scrollY;
       let up = document.querySelector(".toUp");
-      console.log(up);
+      // console.log(up);
   
       if (to > 100) up.classList.add("active");
       else up.classList.remove("active");
-    };
+    };    
   },[]);
 
   // SCROLL ANIMATE
@@ -81,6 +138,7 @@ export default function Home() {
           <meta name="keywords" content="Gean Lopes,Chama no zap,Seja mais produtivo"/>
           <meta property="og:title" content="Chama no zap" />
           <meta property="og:image" content="/chamanozap_web.png" />
+          <meta name="robots" content="follow" />
 
           <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon.png"/>
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
@@ -151,4 +209,24 @@ export default function Home() {
       </div>
     </>
   )
+}
+
+export async function getServerSideProps(){
+  const {
+    APIKEY,AUTHDOMAIN,PROJECTID,
+    STORAGEBUCKET,MESSAGINGSENDERID,APPID,
+    MEASUREMENTID
+  } = process.env;
+  
+  return {
+    props:{
+      // apiKey:APIKEY,
+      // authDomain:AUTHDOMAIN,
+      // projectId:PROJECTID,
+      // storageBucket:STORAGEBUCKET,
+      // messagingSenderId:MESSAGINGSENDERID,
+      // appId:APPID,
+      // measurementId:MEASUREMENTID
+    }
+  }
 }
