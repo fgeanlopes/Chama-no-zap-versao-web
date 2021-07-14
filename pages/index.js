@@ -75,9 +75,7 @@ export default function Home(props) {
   const handleInputChange = useCallback((e)=>{
     let dig = e.target.value;
     
-    dig = dig.replace(/\D/g,"")
-    dig = dig.replace(/^(\d{2})(\d)/g,"($1) $2")
-    dig = dig.replace(/(\d)(\d{4})$/,"$1-$2")
+    dig = dig.replace(/\D/g,"").replace(/^(\d{2})(\d)/g,"($1) $2").replace(/(\d)(\d{4})$/,"$1-$2")
 
     dig.length === 0 && setMensagemBtn('Digite o número acima')
     dig.length > 0 && setMensagemBtn('Digite número completo')
