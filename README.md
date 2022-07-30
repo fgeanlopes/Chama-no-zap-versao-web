@@ -1,14 +1,3 @@
-<div align="center">
-  <br>
-  <br>
-
-  <img src="./public/demo-video.gif">
-
-  <br>
-  <br>
-</div>
-
-
 <h2> ⚡ Sobre o projeto</h2>
 <p>Chama no zap é uma aplicação possibilita chamar pessoas <br> e empresas no WhatsApp, sem a necessidade de salvar o número do contato.</p>
 
@@ -28,7 +17,7 @@
 <br>
 
 <h2> 🎁 Acesse a versão online</h2>
-<u><a style="color:white;" target="_blank" href="https://chamanozap.app">Link Chama no zap</a></u>
+<u><a style="color:white;" target="_blank" href="https://chama-no-zap-versao-web-fgeanlopes.vercel.app/">Link Chama no zap</a></u>
 
 <br>
 <br>
