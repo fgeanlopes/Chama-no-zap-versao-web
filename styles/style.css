@@ -12,7 +12,7 @@ h2:after{content: '';position: absolute; bottom: -25px; left: 50%; transform: tr
 
 @keyframes arrow { 0% {left: 0;} 50% {left: 10px;} 100% {left: 0;}}
 @keyframes draw {from {stroke-linecap: round;}to {stroke-linecap: round;stroke-dashoffset: 0;}}
-@media(max-width:300px) {.content_number svg{width:20px; height:18px}}
+@media(max-width:768px) { .home .content{padding-bottom: 20vh;}}
 
 .none{display: none;}
 .button{cursor: pointer; text-align: center;border-radius: 5px;padding: 10px 30px;background-color: var(--verde);color:white}

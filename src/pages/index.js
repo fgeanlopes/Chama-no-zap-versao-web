@@ -62,7 +62,7 @@ export default function Home() {
             <Image src="/logo.png" alt="Chama no zap" width="331px" height="191px"/>
           </div>
           <div className="content_number">
-            <input type="text" value={valuesDigit?.viewDigit} placeholder="Digite número aqui" onChange={(e)=>{handleInputChange(e)}}/>
+            <input type="tel" value={valuesDigit?.viewDigit} placeholder="Digite número aqui" onChange={(e)=>{handleInputChange(e)}}/>
             <svg xmlns="http://www.w3.org/2000/svg" className={`${enableBtn ? 'check' : 'none'}`} viewBox="0 0 166 150.9">
               <path d="M0.3 96l62.4 54.1L165.6 0.3"/>
             </svg>
